@@ -1,7 +1,28 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-class TodosList extends React.Component {
+const TodosList = ({todos, handleChangeProps, deleteTodoProps}) => {
+
+
+  return (
+    <div>
+      {todos.map((todo, index)=> {
+        return(
+          <TodoItem
+          key={todo.id}
+          todo={todo}
+          handleChangeProps={handleChangeProps}
+          deleteTodoProps={deleteTodoProps}
+          />
+        )
+      }
+      )}
+    </div>
+  )
+
+}
+
+/*class TodosList extends React.Component {
   render() {
     return (
       <div>
@@ -16,6 +37,6 @@ class TodosList extends React.Component {
       </div>
     );
   }
-}
+}*/
 
 export default TodosList;

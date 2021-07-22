@@ -5,7 +5,6 @@ class TodoItem extends React.Component {
   render() {
     const completedStyle = {
       fontStyle: "italic",
-      color: "#d35e0f",
       opacity: 0.4,
       textDecoration: "line-through"
     };
@@ -19,8 +18,8 @@ class TodoItem extends React.Component {
           checked={completed}
           onChange={() => this.props.handleChangeProps(id)}
         />
-        <button onClick={() => this.props.deleteTodoProps(id)}>Delete</button>
         <span style={completed ? completedStyle : null}>{title}</span>
+        <button onClick={() => this.props.deleteTodoProps(id)}>Delete</button>
       </li>
     );
   }
